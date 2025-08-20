@@ -8,22 +8,29 @@
 class Count {
     public void count(String str) {
         int n = str.length();
+        boolean[] isvisited = new boolean[n];
+
         for (int i = 0; i < n; i++) {
+            if (isvisited[i] == true) {
+                continue;
+            }
             int count = 1;
             for (int j = i + 1; j < n; j++) {
                 if (str.charAt(i) == str.charAt(j)) {
+                    isvisited[j] = true;
                     count++;
                 }
             }
-            System.out.println("Occurence of " + str.charAt(i) + " is : " + count);
-        }
+            if (!isvisited[i])
+                System.out.println("Occurence of " + str.charAt(i) + " is : " + count);
 
+        }
     }
 }
 
 class Main {
     public static void main(String[] args) {
         Count c1 = new Count();
-        c1.count("helllooooogggg");
+        c1.count("aabbccddd");
     }
 }
