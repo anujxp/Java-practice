@@ -1,0 +1,34 @@
+12) Can we overload the method with var-arg type of argument.
+Yes, we can overload methods that have var-arg (variable-length argument) parameters.
+
+How Does It Work?
+
+You can have multiple methods with the same name but different parameter lists, where some may use varargs and others may use fixed arguments.
+
+Varargs are treated as an array internally, so overloading must differ in a way that the compiler can clearly resolve which method to call.
+
+However, be careful with ambiguity — if two overloaded methods can match the same call, the compiler will throw an error.
+
+public class VarArgOverloading {
+
+    // Method with fixed arguments
+    public void display(int a, int b) {
+        System.out.println("Method with two int parameters: " + a + ", " + b);
+    }
+
+    // Overloaded method with varargs
+    public void display(int... numbers) {
+        System.out.print("Method with varargs: ");
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        VarArgOverloading obj = new VarArgOverloading();
+
+        obj.display(10, 20);      // Calls method with two int parameters
+        obj.display(1, 2, 3, 4);  // Calls method with varargs
+    }
+}

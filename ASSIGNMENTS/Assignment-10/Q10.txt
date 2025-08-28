@@ -1,0 +1,49 @@
+Method overloading in Java is the ability to create multiple methods with the same name but different 
+parameter lists (different type, number, or order of parameters) within the same class.
+
+
+Key Points of Method Overloading:
+
+Same method name.
+
+Different parameter list (signature).
+
+Can have different return types (but return type alone is not enough to overload).
+
+Happens within the same class.
+
+
+Importance of Method Overloading
+
+Improves Code Readability
+
+Using the same method name for similar actions makes the code easier to understand.
+
+Increases Flexibility
+
+Allows a method to handle different types or numbers of inputs.
+
+Reusability
+
+Avoids writing multiple method names for related functionality.
+
+Compile-Time Polymorphism
+
+Enables polymorphism by binding the method call at compile time.
+
+Yes, we can overload the main method in Java by defining multiple main methods with different parameter lists.
+
+However, the JVM only calls the standard main method with the signature:    
+
+public class MainOverloading {
+
+    public static void main(String[] args) {
+        System.out.println("Standard main method");
+        main(5);  // Calling overloaded main
+    }
+
+    // Overloaded main method with int parameter
+    public static void main(int number) {
+        System.out.println("Overloaded main method with number: " + number);
+    }
+}

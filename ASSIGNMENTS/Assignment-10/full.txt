@@ -1,0 +1,222 @@
+Sure! Below are the answers to your Java interview-style questions in a medium-length format. They are written to demonstrate understanding while being concise, just like in an actual interview.
+
+---
+
+### **2) What is Class and Object? Explain all OOP features in Java with example.**
+
+**Class** is a blueprint or template that defines the structure and behavior (properties and methods) of objects. It doesn’t occupy memory.
+
+**Object** is an instance of a class. When a class is instantiated, memory is allocated, and that specific instance can be used to call methods or access properties.
+
+**Example:**
+
+```java
+class Car {
+    String color;
+    void drive() {
+        System.out.println("Car is driving");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car(); // Object
+        myCar.color = "Red";
+        myCar.drive();
+    }
+}
+```
+
+**OOP Features in Java:**
+
+1. **Encapsulation**: Wrapping of data (variables) and code (methods) together as a single unit. Access is controlled via private fields and public getters/setters.
+
+2. **Inheritance**: Mechanism where one class inherits properties and behavior from another class using `extends` keyword.
+
+   ```java
+   class Animal {
+       void sound() { System.out.println("Animal sound"); }
+   }
+   class Dog extends Animal {
+       void bark() { System.out.println("Dog barks"); }
+   }
+   ```
+
+3. **Polymorphism**: One interface, many implementations. It can be:
+
+   * Compile-time (method overloading)
+   * Runtime (method overriding)
+
+4. **Abstraction**: Hiding complex implementation details and showing only the necessary features. Achieved using abstract classes and interfaces.
+
+---
+
+### **3) What are the role of setter and getter method? What is POJO in Java?**
+
+**Setters and Getters** are methods used to set and retrieve the values of private variables. They support encapsulation by controlling access to an object’s properties.
+
+**Example:**
+
+```java
+class Student {
+    private String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
+}
+```
+
+**POJO (Plain Old Java Object)** is a simple Java object that doesn’t extend or implement any specialized classes or interfaces from the Java framework. It uses private fields, public getters/setters, and no business logic.
+
+**Example of POJO:**
+
+```java
+public class Employee {
+    private int id;
+    private String name;
+
+    // Constructors
+    // Getters and Setters
+}
+```
+
+---
+
+### **4) How to update and retrieve the value of a particular property of an object from another class (Suppose the property is private)?**
+
+To access private properties from another class, we use **public getters and setters**.
+
+**Example:**
+
+```java
+class Person {
+    private String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person p = new Person();
+        p.setName("John"); // Updating
+        System.out.println(p.getName()); // Retrieving
+    }
+}
+```
+
+---
+
+### **5) Create an Object having two properties and four behaviours (add, subtract, multiply, divide). Include setter, getter and keep all properties private.**
+
+```java
+class Calculator {
+    private int num1;
+    private int num2;
+
+    // Setters
+    public void setNum1(int num1) {
+        this.num1 = num1;
+    }
+    public void setNum2(int num2) {
+        this.num2 = num2;
+    }
+
+    // Getters
+    public int getNum1() {
+        return num1;
+    }
+    public int getNum2() {
+        return num2;
+    }
+
+    // Behaviours
+    public int add() {
+        return num1 + num2;
+    }
+    public int subtract() {
+        return num1 - num2;
+    }
+    public int multiply() {
+        return num1 * num2;
+    }
+    public double divide() {
+        if (num2 != 0)
+            return (double) num1 / num2;
+        else
+            throw new ArithmeticException("Division by zero");
+    }
+}
+```
+
+---
+
+### **6) What is Constructor? List down the keypoints about constructor.**
+
+A **constructor** is a special method that is automatically called when an object is created. It is used to initialize the object.
+
+**Key Points:**
+
+* Constructor name must match the class name.
+* It has no return type, not even `void`.
+* It is automatically called during object creation.
+* If no constructor is defined, Java provides a default constructor.
+* Constructors can be overloaded.
+* Can be used to set default or initial values.
+
+**Example:**
+
+```java
+class Student {
+    String name;
+    Student() {
+        name = "Default Name";
+    }
+}
+```
+
+---
+
+### **7) Can we make multiple constructors inside a class? If yes, then what is the need of it? Explain.**
+
+Yes, we can have **multiple constructors** inside a class. This is known as **constructor overloading**.
+
+**Why we need it:**
+
+* To provide different ways of initializing an object.
+* To support flexibility in object creation.
+* Helps in assigning default or user-defined values.
+
+**Example:**
+
+```java
+class Employee {
+    String name;
+    int id;
+
+    // Default constructor
+    Employee() {
+        name = "Unknown";
+        id = 0;
+    }
+
+    // Parameterized constructor
+    Employee(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+}
+```
+
+So depending on the situation, we can create an object using the default or parameterized constructor.
+
+---
+
+Let me know if you'd like this compiled into a PDF or formatted for practice.

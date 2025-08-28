@@ -1,0 +1,40 @@
+Getter and Setter methods are used in Java to access and update the values of private fields (variables) in a class.
+
+Why Use Them?
+
+Java follows the principle of encapsulation – hiding the internal state of an object and only allowing access through public methods.
+
+1. Getter Method - Used to retrieve the value of a private field. Follows the naming pattern: getFieldName().
+
+public class Person {
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+}
+
+Setter Method - Used to modify the value of a private field. Follows the naming pattern: setFieldName().
+
+public class Person {
+    private String name;
+
+    public void setName(String newName) {
+        this.name = newName;
+    }
+}
+
+
+What is a POJO in Java?
+POJO stands for Plain Old Java Object.
+Definition:
+A POJO is a simple Java object that doesn’t extend or implement any specialized classes or interfaces. It is used to represent data.
+Characteristics of POJO:
+
+1)No need to extend specific classes.
+
+2)No annotations or business logic.
+
+3)Uses private fields and public getter/setter methods.
+
+4)Typically used in data transfer, ORM (e.g., Hibernate), or for modeling simple data.

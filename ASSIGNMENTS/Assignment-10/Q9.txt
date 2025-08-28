@@ -1,0 +1,58 @@
+A Singleton class is a class that allows only one instance (object) of itself to be created throughout the entire application. It restricts instantiation of the class and provides a global point of access to that instance.z
+
+Why use Singleton?
+
+To control object creation, ensuring only one object exists.
+
+Useful for managing shared resources like configuration settings, database connections, or logging.
+
+Helps to reduce memory footprint since only one instance is created.
+
+
+
+
+Key Characteristics of Singleton:
+
+Private constructor to prevent direct instantiation.
+
+Static private instance variable to hold the single instance.
+
+Public static method (commonly named getInstance()) that returns the instance.
+
+Ensures lazy initialization — object created only when needed.
+
+
+
+public class Singleton {
+    // Step 1: private static variable of the same class that is the only instance of the class
+    private static Singleton instance;
+
+    // Step 2: private constructor to restrict instantiation from other classes
+    private Singleton() {
+        // Initialization code here
+    }
+
+    // Step 3: public static method to provide global access point
+    public static Singleton getInstance() {
+        if (instance == null) {  // Lazy initialization
+            instance = new Singleton();
+        }
+        return instance;
+    }
+
+    // Example method
+    public void showMessage() {
+        System.out.println("Hello from Singleton!");
+    }
+}
+class Main {
+    public static void main(String[] args) {
+        // Try to get the single instance of Singleton
+        Singleton singletonObj = Singleton.getInstance();
+        singletonObj.showMessage();
+
+        // Even if you call getInstance() again, it returns the same object
+        Singleton anotherObj = Singleton.getInstance();
+        System.out.println(singletonObj == anotherObj);  // true
+    }
+}

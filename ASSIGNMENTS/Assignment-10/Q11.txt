@@ -1,0 +1,42 @@
+In Java, you can pass a variable number of arguments (also called varargs) to a method using the varargs syntax.
+
+Varargs Syntax:
+
+Use three dots ... after the parameter type.
+
+This allows passing zero or more arguments of the specified type.
+
+Inside the method, varargs are treated as an array.
+
+
+public class VarargsExample {
+
+    // Method accepts any number of int arguments
+    public void printNumbers(int... numbers) {
+        for (int num : numbers) {
+            System.out.println(num);
+        }
+    }
+
+    public static void main(String[] args) {
+        VarargsExample example = new VarargsExample();
+
+        // Passing different numbers of arguments
+        example.printNumbers(1, 2, 3);
+        example.printNumbers(10, 20);
+        example.printNumbers();  // no argument passed
+    }
+}
+\
+public void exampleMethod(String name, int... numbers) {
+    // valid
+}
+
+
+ou can pass:
+
+No arguments
+
+Single argument
+
+Multiple arguments

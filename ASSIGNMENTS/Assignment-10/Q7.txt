@@ -1,0 +1,52 @@
+7)Can we make multiple contructor inside a class? if yes then what is the need of it.Explain,
+
+Yes, we can have multiple constructors inside a class in Java. This concept is called Constructor Overloading.
+
+What is Constructor Overloading?
+
+It means defining more than one constructor in the same class, but with different parameter lists (different number or types of parameters).
+
+Each constructor has the same name (which is the class name), but different signatures.
+
+---------Why do we need multiple constructors?
+
+Flexibility in Object Creation
+--It allows creating objects in different ways depending on the available data.
+
+--Improves Code Readability and Usability
+
+Users of the class can choose the most appropriate constructor based on their needs.
+
+Prevents the need to set properties separately after object creation.
+
+Supports Different Initialization Scenarios
+
+Sometimes, not all details are known upfront ; constructor overloading lets you provide partial or default values.
+
+
+public class Book {
+    private String title;
+    private String author;
+    private int year;
+
+    // Constructor 1: No arguments (default constructor)
+    public Book() {
+        this.title = "Unknown";
+        this.author = "Unknown";
+        this.year = 0;
+    }
+
+    // Constructor 2: Title and author only
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+        this.year = 0;  // default year
+    }
+
+    // Constructor 3: All properties
+    public Book(String title, String author, int year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+    }
+}

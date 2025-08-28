@@ -1,0 +1,8 @@
+To update and retrieve the value of a private property of an object from another class, we follow the concept of encapsulation in Java.
+
+Since the property is marked as private, it is not directly accessible outside its own class. To interact with it, we use public getter and setter methods.
+Encapsulation: We are protecting direct access to the field by making it private.
+
+Getter and Setter: We are safely exposing the field to outside classes through public methods.
+
+By using getter and setter methods, we follow object-oriented best practices and ensure that the class maintains control over how its internal data is accessed and modified.

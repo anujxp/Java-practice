@@ -1,0 +1,11 @@
+1) What is Object oriented? Write down difference b/w Object oriented and procedure oriented programming approach.
+
+Object oriented - 
+object oriented is a programming paradigm and in this paradigm we devide our program into smaller smalller real world entity 
+and smaller component and we do everything with the help of class and objects int the objenct oriented there are four main
+piller are there whose name are 
+1) Encapsulation : To encapsulate  somtething like showing essential information and hide the un usuable data 
+                    example : class, method ;
+2) Abstraction  : hinding the information and showing only essential info and example acseess specifier 
+3) Inheritance :  create somthing new with the help of the existing object.
+4) Polymorphism : one thing have different implimentation  
