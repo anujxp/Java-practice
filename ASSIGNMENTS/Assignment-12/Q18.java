@@ -4,14 +4,17 @@ import java.util.List;
 class Product {
     private Double price;
 
-    // Constructor
+    
     public Product(Double price) {
         this.price = price;
     }
 
     public void setPrice(Double price) {
         this.price = price;
-    }
+    } // if (price != null)
+      // total += price;
+      // else
+      // throw new NullPointerException();
 
     public Double getPrice() {
         return price;
@@ -23,7 +26,17 @@ class Main {
         double total = 0.0;
         for (Product product : cart) {
             Double price = product.getPrice();
-            total += (price != null) ? price : 0.0; // default to 0.0
+            // total += (price != null) ? price : throw new NullPointerException(); // default to 0.0
+            // if (price != null)
+            //     total += price;
+            // else
+            //     throw new NullPointerException();
+            try{
+                total += price;
+            }
+            catch (NullPointerException e) {
+                continue;
+            }
         }
         return total;
     }
@@ -31,8 +44,8 @@ class Main {
     public static void main(String[] args) {
         List<Product> ps = new ArrayList<>();
 
-        ps.add(new Product(1.99)); // Apple with price
-        ps.add(new Product(null)); // Banana with null price
+        ps.add(new Product(1.99)); 
+        ps.add(new Product(null)); 
 
         double total = calculateTotal(ps);
         System.out.println("Total: " + total);
