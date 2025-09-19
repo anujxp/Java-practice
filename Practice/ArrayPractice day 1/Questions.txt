@@ -1,0 +1,24 @@
+input: arr[] = [12, 35, 1, 10, 34, 1]
+Output: 34
+Explanation: The largest element of the array is 35 and the second largest element is 34.
+
+
+Input: arr[] = {1, 14, 2, 16, 10, 20}
+Output: 14
+Explanation: Largest element is 20, second largest element is 16 and third largest element is 14
+
+
+question 2:
+Input: arr[] = {1, 14, 2, 16, 10, 20}
+Output: 14
+Explanation: Largest element is 20, second largest element is 16 and third largest element is 14
+
+
+3:  Input: s = "abba"
+    Output: 1
+    Explanation: s is a palindrome
+    
+    
+4:    Input: s = "GeeksforGeeks"
+Output: "skeeGrofskeeG"
+Explanation : The first character G moves to last position, the second character e moves to second-last and so on.
