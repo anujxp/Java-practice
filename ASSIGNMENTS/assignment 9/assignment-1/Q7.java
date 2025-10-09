@@ -1,50 +1,26 @@
-
 // 7)WAP to remove the duplicate letters from given String.
 // 	Sample Input: “aabbccddd”
 // 	Output: “abcd”
-import java.util.Scanner;
+class test {
+    public static void main(String[] args) {
+        String str = "aabbccddd";
+        // String s = "";
+        StringBuilder s = new StringBuilder();
 
-class RemoveDuplicate {
-    private String result = "";
-
-    public String remove(String str) {
-        char[] ch = str.toCharArray();
-        int n = ch.length;
-        int count;
-        for (int i = 0; i < n; i++) {
-            boolean isDuplicate = false;
-            for (int j = i + 1; j < n; j++) {
-                if (ch[i] == ch[j]) {
-                    isDuplicate = true;
-                }
-            }
-            if (!isDuplicate) {
-                result += ch[i];
-            }
-        }
-        return result;
-    }
-
-    public String removef(String str) {
 
         for (int i = 0; i < str.length(); i++) {
-            char ch = str.charAt(i);
-            if (result.indexOf(ch) == -1) {
-                result += ch;
+            boolean found = false;
+            for (int j = 0; j < s.length(); j++) {
+                if (s.charAt(j) == str.charAt(i)) {
+                    found = true;
+                    break;
+                }
             }
-            
+            if (!found) {
+                // s += str.charAt(i);
+                s.append(str.charAt(i));
+            }
         }
-        return result;
+        System.out.println(s.toString());
     }
-
-}
-
-class Main {
-    public static void main(String[] args) {
-        Scanner se = new Scanner(System.in);
-        System.out.println("Enter a string  to cheack duplicate ");
-        String str = se.next();
-        RemoveDuplicate r1 = new RemoveDuplicate();
-        System.out.println(r1.removef(str));
-        }
 }

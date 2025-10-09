@@ -5,7 +5,7 @@ class main{
     public static void main(String[] args) {
         String str = "Dear Student ,You have need to work hard";
         int length = str.length();
-        String s = "";
+        String s = "";//not using string builder because in loop we are deleting String and only with delete function in String buffer we can do thisz
         int start = 0;
         int maxlen = 0;
         for (int i = 0; i <=str.length(); i++) {
@@ -21,6 +21,5 @@ class main{
             }        
         }
         System.out.println(s);
-            // System.out.print(s);
     }
 }

@@ -1,32 +1,40 @@
 // 6) Write a java program to find all possible palindrom of given String.
 // Sample Input: “aaabbbacccababacccaabb”
-
-class test{
-    public static boolean e(String str, String s) {
-    if (str.length() != s.length()) {
-        return false;
-    }
-    for (int i = 0; i < s.length(); i++) {
-        if (str.charAt(i) != s.charAt(i)) {
-            return false;
+class AllPalindromes {
+    
+    // Method to check if a substring is palindrome
+    static boolean isPalindrome(char[] arr, int start, int end) {
+        while (start < end) {
+            if (arr[start] != arr[end]) {
+                return false;
+            }
+            start++;
+            end--;
         }
+        return true;
     }
-    return true;
-}
 
     public static void main(String[] args) {
         String str = "aaabbbacccababacccaabb";
-        int length = str.length();
-        String s = "";
+        char[] arr = str.toCharArray();
 
+        int n = arr.length;
 
-        for (int i = length-1; i>0; i--) {
-            s+= str.charAt(i);
+        System.out.println("All possible palindromes are:");
+
+        // Generate all substrings
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                // Check if substring arr[i..j] is palindrome
+                if (isPalindrome(arr, i, j)) {
+                    // Print manually (without substring function)
+                    for (int k = i; k <= j; k++) {
+                        System.out.print(arr[k]);
+                    }
+                    System.out.println();
+                }
+            }
         }
-        if(e(str,s))
-        System.out.println("String is Palindore");
-        else
-        System.out.println("String is not Palindore");
-
-    }   
+    }
 }
+

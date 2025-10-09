@@ -1,0 +1,140 @@
+
+
+1. length()
+Use:
+String s = "Hello";
+int l = s.length(); // l = 5
+
+Logic:
+public int length() {
+    return value.length; // 'value' is the internal char[] array.
+}
+
+2. charAt(int index)
+Use:
+String s = "Hello";
+char ch = s.charAt(1); // ch = 'e'
+
+Logic:
+public char charAt(int index) {
+    if (index < 0 || index >= value.length)
+        throw new IndexOutOfBoundsException();
+    return value[index];
+}
+
+
+3. substring(int beginIndex, int endIndex)
+Use:
+String st = "Hello";
+String sub = st.substring(1, 4); // sub = "ell"
+
+Logic:
+public String substring(int begin, int end) {
+    if (begin < 0 || end > value.length || begin > end)
+        throw new IndexOutOfBoundsException();
+    char[] newArr = new char[end - begin];
+    for (int i = begin; i < end; i++) {
+        newArr[i - begin] = value[i];
+    }
+    return new String(newArr);
+}
+
+
+4. indexOf(char ch)
+Use:
+String s = "Hello";
+int idx = s.indexOf('l'); // idx = 2
+
+Logic:
+public int indexOf(char ch) {
+    for (int i = 0; i < value.length; i++) {
+        if (value[i] == ch) return i;
+    }
+    return -1;
+}
+
+
+5. toLowerCase()
+Use:
+String s = "HELLO";
+String lower = s.toLowerCase(); // lower = "hello"
+
+Logic:
+public String toLowerCase() {
+    char[] newArr = new char[value.length];
+    for (int i = 0; i < value.length; i++) {
+        char c = value[i];
+        if (c >= 'A' && c <= 'Z')
+            newArr[i] = (char)(c + 32); // ASCII only
+        else
+            newArr[i] = c;
+    }
+    return new String(newArr);
+}
+
+
+6. equals(String other)
+Use:
+String a = "Hello";
+String b = "Hello";
+boolean eq = a.equals(b); // eq = true
+
+Logic:
+public boolean equals(String other) {
+    if (other == null || value.length != other.value.length)
+        return false;
+    for (int i = 0; i < value.length; i++) {
+        if (value[i] != other.value[i]) return false;
+    }
+    return true;
+}
+
+
+7. startsWith(String prefix)
+Use:
+String s = "Hello";
+boolean sw = s.startsWith("He"); // sw = true
+
+Logic:
+public boolean startsWith(String prefix) {
+    if (prefix.length() > value.length)
+        return false;
+    for (int i = 0; i < prefix.length(); i++) {
+        if (value[i] != prefix.charAt(i))
+            return false;
+    }
+    return true;
+}
+
+
+8. split(String delimiter)
+Use:
+String s = "a,b,c";
+String[] arr = s.split(","); // arr = ["a","b","c"]
+
+Logic:
+public String[] split(String delimiter) {
+    List<String> parts = new ArrayList<>();
+    int start = 0;
+    int idx = 0;
+    while ((idx = indexOf(delimiter, start)) != -1) {
+        parts.add(substring(start, idx));
+        start = idx + delimiter.length();
+    }
+    parts.add(substring(start, value.length));
+    return parts.toArray(new String[0]);
+}
+
+// Helper method, for demonstration
+private int indexOf(String delimiter, int start) {
+    outer: for (int i = start; i <= value.length - delimiter.length(); i++) {
+        for (int j = 0; j < delimiter.length(); j++) {
+            if (value[i + j] != delimiter.charAt(j)) continue outer;
+        }
+        return i;
+    }
+    return -1;
+}
+
+
+If you want the usage and logic for more functions (like endsWith, toUpperCase, replace, etc.), let me know the method names!

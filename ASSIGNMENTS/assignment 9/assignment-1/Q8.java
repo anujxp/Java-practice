@@ -5,32 +5,29 @@
 // 			c- 2 times
 // 			d- 3 times
 
-class Count {
-    public void count(String str) {
-        int n = str.length();
-        boolean[] isvisited = new boolean[n];
-
-        for (int i = 0; i < n; i++) {
-            if (isvisited[i] == true) {
+class Occurence {
+    public void ocr(String str) {
+        boolean[] visited = new boolean[str.length()];
+        for (int i = 0; i < str.length(); i++) {
+            if (visited[i])
                 continue;
-            }
-            int count = 1;
-            for (int j = i + 1; j < n; j++) {
-                if (str.charAt(i) == str.charAt(j)) {
-                    isvisited[j] = true;
+
+            int count = 1; // 
+            for (int j = i + 1; j < str.length(); j++) {
+                if (str.charAt(j) == str.charAt(i)) {
                     count++;
+                    visited[j] = true;
                 }
             }
-            if (!isvisited[i])
-                System.out.println("Occurence of " + str.charAt(i) + " is : " + count);
-
+            System.out.println(str.charAt(i) + " - " + count + " times");
         }
     }
 }
 
-class Main {
+class Test {
     public static void main(String[] args) {
-        Count c1 = new Count();
-        c1.count("aabbccddd");
+        String str = "aabbccddd";
+        Occurence ocr = new Occurence();
+        ocr.ocr(str);
     }
 }
