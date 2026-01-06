@@ -1,0 +1,25 @@
+1. Reverse a string without using reverse().
+2. Check if string is palindrome.
+3. Count vowels and consonants in string.
+4. Count number of words in a string.
+5. Find frequency of each character.
+6. Remove all whitespaces from string.
+7. Check if two strings are anagrams.
+8. Reverse each word of a sentence.
+9. Find duplicate characters in a string.
+10. Remove duplicate characters from string.
+11. Find first non-repeating character in string.
+12. Count uppercase, lowercase, digits, and special characters.
+13. Convert string to uppercase without using toUpperCase().
+14. Check if two strings are rotation of each other.
+15. Print all substrings of a string.
+16. Check if string contains only digits.
+17. Toggle each character’s case.
+18. Count number of characters without length().
+19. Replace each character of string with its next alphabet.
+20. Find the longest word in a sentence.
+21. Count occurrences of a given word in sentence.
+22. Find longest repeating character sequence.
+23. Remove vowels from string.
+24. Check if string is pangram.
+25. Sort characters of a string alphabetically.

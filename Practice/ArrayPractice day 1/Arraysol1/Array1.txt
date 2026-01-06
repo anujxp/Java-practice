@@ -1,0 +1,26 @@
+ARRAY-FOCUSED JAVA INTERVIEW QUESTIONS (Top 25)
+1. Find the largest element in an array.
+2. Find the smallest element in an array.
+3. Find the second largest element in an array.
+4. Find the second smallest number in an array.
+5. Sort an array without using built-in sort().
+6. Reverse an array.
+7. Remove duplicates from an array (without using Set).
+8. Find missing number from an array containing 1 to n.
+9. Find duplicate elements in an array.
+10. Find frequency of each element in array.
+11. Rotate array left by 1 position.
+12. Rotate array right by 1 position.
+13. Find pair of elements whose sum is equal to given target.
+14. Linear search in array.
+15. Binary search in sorted array.
+16. Merge two arrays.
+17. Separate even and odd numbers from array.
+18. Check if array is sorted or not.
+19. Remove a specific element from array.
+20. Count even & odd numbers in array.
+21. Find intersection of two arrays.
+22. Find union of two arrays.
+23. Find maximum product of two elements in array.
+24. Move all zeros to the end of array.
+25. Count number of occurrences of given element.
